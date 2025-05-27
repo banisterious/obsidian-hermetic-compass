@@ -9,12 +9,16 @@
 build/
 dist/
 main.js
+*.js.map
 
 # Dependency directories
 node_modules/
 npm-debug.log
 yarn-error.log
 yarn-debug.log
+.npm/
+.yarn/
+package-lock.json.old
 
 # OS files
 .DS_Store
@@ -27,4 +31,15 @@ desktop.ini
 # Temporary files
 *.log
 *.tmp
-.eslintcache 
+.eslintcache
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local 

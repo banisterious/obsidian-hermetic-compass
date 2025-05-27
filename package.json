@@ -1,0 +1,32 @@
+{
+  "name": "obsidian-hermetic-compass",
+  "version": "0.0.1",
+  "description": "An Obsidian plugin for personal Tarot reflection and life path exploration using Angeles Arrien's methodologies and the Thoth Tarot deck",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+    "version": "node version-bump.mjs && git add manifest.json versions.json"
+  },
+  "keywords": [
+    "obsidian",
+    "plugin",
+    "tarot",
+    "thoth",
+    "arrien",
+    "numerology",
+    "personal-development"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "builtin-modules": "^5.0.0",
+    "esbuild": "^0.25.4",
+    "obsidian": "^1.8.7",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "tslib": "^2.8.1"
+  }
+}

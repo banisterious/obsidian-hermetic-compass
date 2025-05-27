@@ -1,0 +1,10 @@
+{
+	"id": "obsidian-hermetic-compass",
+	"name": "Hermetic Compass",
+	"version": "0.0.1",
+	"minAppVersion": "0.15.0",
+	"description": "Generate personal Tarot profiles and yearly Growth Charts based on Angeles Arrien's methodologies and the Thoth Tarot deck",
+	"author": "Obsidian Hermetic Compass Contributors",
+	"authorUrl": "https://github.com/banisterious/obsidian-hermetic-compass",
+	"isDesktopOnly": true
+} 

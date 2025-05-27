@@ -4,7 +4,7 @@ All notable changes to the Obsidian Hermetic Compass plugin will be documented i
 
 ## Table of Contents
 - [Unreleased](#unreleased)
-- [0.1.0](#010---2025-05-26)
+- [0.0.1](#001---2025-05-26)
 
 ## Unreleased
 
@@ -17,7 +17,7 @@ All notable changes to the Obsidian Hermetic Compass plugin will be documented i
 - Edge case handling for specific date calculations
 - UI improvements for mobile compatibility
 
-## 0.1.0 - 2025-05-26
+## 0.0.1 - 2025-05-26
 
 ### Added
 - Initial release of Obsidian Hermetic Compass

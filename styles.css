@@ -1,0 +1,102 @@
+/* Hermetic Compass Plugin Styles */
+
+/* Growth Chart Styles */
+.ohcp-growth-chart {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ohcp-year-entry {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: var(--background-secondary);
+}
+
+.ohcp-year-entry:hover {
+  background-color: var(--background-secondary-alt);
+}
+
+.ohcp-year-info {
+  flex: 0 0 100px;
+}
+
+.ohcp-card-info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.ohcp-card-image {
+  width: 60px;
+  height: 90px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ohcp-card-name {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.ohcp-path {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.ohcp-actions {
+  flex: 0 0 100px;
+  text-align: right;
+}
+
+.ohcp-copy-link {
+  cursor: pointer;
+  color: var(--text-accent);
+}
+
+.ohcp-copy-link:hover {
+  text-decoration: underline;
+}
+
+/* Card Description Modal Styles */
+.ohcp-card-modal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.ohcp-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ohcp-card-header-image {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ohcp-card-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Settings Styles */
+.ohcp-settings h4 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.ohcp-settings .birth-date-container {
+  padding-left: 20px;
+} 

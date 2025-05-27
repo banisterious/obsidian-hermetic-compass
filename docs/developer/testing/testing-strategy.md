@@ -1,265 +1,114 @@
-# Obsidian Hermetic Compass: Testing Strategy
+# Testing Strategy
 
 ## Table of Contents
-- [1. Introduction](#1-introduction)
-  - [1.1. Purpose](#11-purpose)
-  - [1.2. Testing Principles](#12-testing-principles)
-- [2. Testing Levels](#2-testing-levels)
-  - [2.1. Unit Testing](#21-unit-testing)
-  - [2.2. Integration Testing](#22-integration-testing)
-  - [2.3. UI Testing](#23-ui-testing)
-  - [2.4. End-to-End Testing](#24-end-to-end-testing)
-- [3. Test Environment](#3-test-environment)
-  - [3.1. Development Environment](#31-development-environment)
-  - [3.2. Test Data](#32-test-data)
-- [4. Testing Areas](#4-testing-areas)
-  - [4.1. Core Calculations](#41-core-calculations)
-  - [4.2. Profile Report Generation](#42-profile-report-generation)
-  - [4.3. Growth Chart Display](#43-growth-chart-display)
-  - [4.4. Card Description Viewer](#44-card-description-viewer)
-  - [4.5. Settings and Configuration](#45-settings-and-configuration)
-- [5. Testing Tools and Frameworks](#5-testing-tools-and-frameworks)
-  - [5.1. Unit Testing Framework](#51-unit-testing-framework)
-  - [5.2. Mock Objects](#52-mock-objects)
-  - [5.3. Test Runners](#53-test-runners)
-- [6. Test Case Design](#6-test-case-design)
-  - [6.1. Test Case Template](#61-test-case-template)
-  - [6.2. Test Case Naming Convention](#62-test-case-naming-convention)
-- [7. Test Execution](#7-test-execution)
-  - [7.1. Testing Workflow](#71-testing-workflow)
-  - [7.2. Bug Reporting](#72-bug-reporting)
-- [8. Test Automation](#8-test-automation)
-  - [8.1. Automated Tests](#81-automated-tests)
-  - [8.2. CI/CD Integration](#82-cicd-integration)
+- [Overview](#overview)
+- [Testing Layers](#testing-layers)
+  - [Unit Tests](#unit-tests)
+  - [Integration Tests](#integration-tests)
+  - [End-to-End Tests](#end-to-end-tests)
+- [Test Organization](#test-organization)
+- [Testing Tools](#testing-tools)
+- [Test Coverage](#test-coverage)
+- [CI/CD Integration](#cicd-integration)
 
-## 1. Introduction
+## Overview
 
-### 1.1. Purpose
+This document outlines the testing strategy for the Obsidian Hermetic Compass plugin. The testing approach aligns with the modular architecture to ensure high code quality, prevent regressions, and facilitate continuous development.
 
-This document outlines the testing strategy for the Obsidian Hermetic Compass plugin. It defines the approach, methodologies, and tools used to ensure the quality and reliability of the plugin throughout its development lifecycle.
+## Testing Layers
 
-### 1.2. Testing Principles
+The testing strategy employs a pyramidal approach with three layers:
 
-The testing approach is guided by these core principles:
+### Unit Tests
 
-- **Early Testing**: Begin testing as early as possible in the development process
-- **Comprehensive Coverage**: Test all critical functionality and edge cases
-- **Automation**: Automate repetitive tests where feasible
-- **Data Validation**: Ensure numerological calculations are accurate and consistent
-- **User Experience**: Verify that the UI is intuitive and accessible
+Unit tests focus on testing individual modules in isolation. Each module should have corresponding unit tests that verify its functionality without dependencies on other modules.
 
-## 2. Testing Levels
+**Key characteristics:**
+- Fast execution
+- High isolation (dependencies are mocked)
+- Focus on business logic
+- One test file per source file
 
-### 2.1. Unit Testing
+**Examples of unit testable modules:**
+- Numerology calculations
+- Profile generation logic
+- Utility functions
 
-Unit tests will focus on verifying the correctness of individual functions and components:
+### Integration Tests
 
-- **Calculation Functions**: Test each numerological calculation independently
-- **Utility Functions**: Test helper functions for data manipulation
-- **UI Components**: Test individual UI components in isolation
+Integration tests verify that multiple modules work together correctly. These tests focus on the interfaces between modules and ensure proper integration.
 
-Each unit test should:
-- Test a single function or component
-- Mock external dependencies
-- Cover both normal and edge cases
-- Verify expected outputs for given inputs
+**Key characteristics:**
+- Test multiple modules together
+- Minimal mocking (only external dependencies)
+- Focus on module interactions
+- Cover critical paths through the system
 
-### 2.2. Integration Testing
+**Examples of integration tests:**
+- Settings persistence and loading
+- Profile generation with actual calculation service
+- File operations with the Obsidian API
 
-Integration tests will verify that components work together correctly:
+### End-to-End Tests
 
-- **Calculation Module Integration**: Test that calculation functions work together to produce correct Profile Reports and Growth Charts
-- **UI and Data Flow**: Test that UI components correctly display and interact with calculated data
-- **Settings and Plugin Core**: Test that user settings correctly affect plugin behavior
+End-to-end tests verify the functionality of the entire plugin from a user's perspective. These tests interact with the plugin as a user would and verify expected outcomes.
 
-### 2.3. UI Testing
+**Key characteristics:**
+- Test the entire plugin
+- No mocking (real environment)
+- Focus on user workflows
+- Cover critical user journeys
 
-UI tests will focus on verifying the user interface functionality:
+**Examples of end-to-end tests:**
+- Complete profile generation workflow
+- Settings configuration
+- Growth chart navigation
 
-- **Modal Display and Interaction**: Test modals for the Growth Chart and Card Description Viewer
-- **Settings Interface**: Test the settings panel and user input handling
-- **Command Palette Integration**: Test command palette functionality
-- **Markdown Rendering**: Test the rendering of generated Profile Reports
+## Test Organization
 
-### 2.4. End-to-End Testing
+Tests are organized to mirror the source code structure:
 
-End-to-end tests will simulate real user workflows:
-
-- **Complete Profile Generation Workflow**: Test the entire process from entering user data to viewing the Profile Report
-- **Growth Chart Navigation**: Test year navigation and interaction with the Growth Chart
-- **Integration with Obsidian**: Test how the plugin interacts with the broader Obsidian environment
-
-## 3. Test Environment
-
-### 3.1. Development Environment
-
-Testing will be conducted in the following environments:
-
-- **Local Development**: During development on developers' machines
-- **Test Vault**: A dedicated Obsidian vault with test data
-- **Multiple Platforms**: Windows, macOS, and Linux where feasible
-
-### 3.2. Test Data
-
-The following test data will be used:
-
-- **Sample User Profiles**: A set of predefined user profiles with known calculation results
-- **Test Card Images**: Non-copyrighted test images for development
-- **Mock Card Descriptions**: Sample Markdown files for card descriptions
-- **Edge Case Data**: Special cases like master numbers, unusual names, etc.
-
-## 4. Testing Areas
-
-### 4.1. Core Calculations
-
-Testing of the core calculation logic will include:
-
-- **Name Symbol Calculations**: Verify correct conversion from letters to numbers
-- **Birth Symbol Calculations**: Test all birth date-derived calculations
-- **Reduction Rules**: Test numerological reduction for various inputs
-- **Personality Choice Calculations**: Test yearly card derivation
-- **Path Mapping**: Verify correct mapping from numbers to "Path" descriptions
-
-**Test Cases Example:**
-```javascript
-test('should correctly reduce a number according to Arrien rules', () => {
-  expect(reduceNumber(1)).toBe(1);
-  expect(reduceNumber(10)).toBe(10);
-  expect(reduceNumber(11)).toBe(11);  // Master number
-  expect(reduceNumber(22)).toBe(22);  // Master number
-  expect(reduceNumber(23)).toBe(5);   // 2+3=5
-  expect(reduceNumber(123)).toBe(6);  // 1+2+3=6
-});
+```
+tests/
+├── unit/                    # Unit tests
+│   ├── models/              # Tests for data models
+│   ├── services/            # Tests for services
+│   │   ├── calculations/    # Tests for calculation services
+│   │   └── profile/         # Tests for profile services
+│   └── utils/               # Tests for utilities
+├── integration/             # Integration tests
+│   ├── settings/            # Tests for settings persistence
+│   └── profile/             # Tests for profile generation
+└── e2e/                     # End-to-end tests
+    ├── profile-generation/  # Tests for profile generation workflow
+    └── growth-chart/        # Tests for growth chart workflow
 ```
 
-### 4.2. Profile Report Generation
+## Testing Tools
 
-Testing of the Profile Report generation will include:
+The following tools are used for testing:
 
-- **Report Structure**: Verify correct Markdown structure
-- **Content Accuracy**: Test that calculated values appear correctly
-- **Image Embedding**: Test the embedding of card images
-- **Link Generation**: Verify links to card descriptions
+- **Jest**: Primary testing framework for unit and integration tests
+- **Testing Library**: For testing UI components
+- **Mock Service Worker**: For mocking external services
+- **Obsidian Test Helpers**: Custom utilities for testing Obsidian-specific functionality
 
-### 4.3. Growth Chart Display
+## Test Coverage
 
-Testing of the Growth Chart display will include:
+The project aims for the following test coverage targets:
 
-- **Data Accuracy**: Verify correct year-by-year calculations
-- **Navigation**: Test scrolling and year selection
-- **Visual Display**: Test the display of card thumbnails, names, and paths
-- **Link Copying**: Test the "Copy Markdown Link" functionality
+- **Unit tests**: 80%+ coverage of all services and utilities
+- **Integration tests**: Cover all critical module interactions
+- **End-to-end tests**: Cover all main user workflows
 
-### 4.4. Card Description Viewer
+Coverage reports are generated during the CI/CD process to track these metrics.
 
-Testing of the Card Description Viewer will include:
+## CI/CD Integration
 
-- **Navigation**: Test navigation between cards
-- **Content Display**: Verify correct rendering of Markdown notes
-- **Modal Interaction**: Test opening and closing the modal
-- **Integration**: Test launching from Profile Report and Growth Chart
+Tests are integrated into the CI/CD pipeline with the following approach:
 
-### 4.5. Settings and Configuration
+1. **Pre-commit hooks**: Run linting and unit tests
+2. **Pull request validation**: Run all tests and generate coverage reports
+3. **Release validation**: Run all tests before creating a release
 
-Testing of the settings and configuration will include:
-
-- **User Data Storage**: Test saving and loading user data
-- **File Path Configuration**: Test configuration of image and note paths
-- **Validation**: Test input validation for user data
-- **Persistence**: Verify settings are saved correctly between sessions
-
-## 5. Testing Tools and Frameworks
-
-### 5.1. Unit Testing Framework
-
-The recommended testing framework is Jest, which offers:
-
-- Easy test creation and execution
-- Built-in assertion library
-- Mocking capabilities
-- Coverage reporting
-
-### 5.2. Mock Objects
-
-For testing components that depend on Obsidian APIs:
-
-- Create mock objects for Obsidian's API classes
-- Simulate vault operations, file access, and settings
-
-### 5.3. Test Runners
-
-- **Jest**: For running unit and integration tests
-- **Manual Testing Checklist**: For UI and end-to-end tests
-
-## 6. Test Case Design
-
-### 6.1. Test Case Template
-
-Each test case should follow this structure:
-
-```javascript
-/**
- * Test: [Brief description]
- * 
- * Purpose: [What aspect is being tested]
- * Input: [Test inputs]
- * Expected Output: [Expected result]
- * Edge Cases: [If applicable]
- */
-test('[Test description]', () => {
-  // Arrange
-  const input = [...];
-  
-  // Act
-  const result = functionUnderTest(input);
-  
-  // Assert
-  expect(result).toBe(expectedOutput);
-});
-```
-
-### 6.2. Test Case Naming Convention
-
-- Use descriptive names that explain what is being tested
-- Follow the pattern: `[unit]_[scenario]_[expected result]`
-- Examples:
-  - `reduceNumber_masterNumber_returnsUnchanged`
-  - `calculateNameSymbol_complexName_returnsCorrectCard`
-  - `growthChart_longDateRange_generatesAllYears`
-
-## 7. Test Execution
-
-### 7.1. Testing Workflow
-
-1. **Development Testing**: Developers run unit tests during development
-2. **Pre-commit Testing**: Run all automated tests before committing code
-3. **Feature Completion Testing**: Complete all test types when a feature is completed
-4. **Regression Testing**: Run automated tests after any significant changes
-
-### 7.2. Bug Reporting
-
-When bugs are found:
-
-1. Create an issue with detailed reproduction steps
-2. Include expected vs. actual behavior
-3. Add relevant environment information
-4. Create a failing test that demonstrates the bug
-5. Fix the bug and verify the test passes
-
-## 8. Test Automation
-
-### 8.1. Automated Tests
-
-The following tests should be automated:
-
-- All unit tests
-- Integration tests for calculation functions
-- Basic UI component tests
-
-### 8.2. CI/CD Integration
-
-Set up continuous integration to:
-
-- Run tests automatically on push
-- Report test results and coverage
-- Fail builds if tests don't pass 
+This ensures that all code changes are thoroughly tested before being released to users. 
