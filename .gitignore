@@ -1,0 +1,30 @@
+# Obsidian Hermetic Compass .gitignore
+
+# Editor directories
+.cursor/
+.vscode/
+.idea/
+
+# Build output
+build/
+dist/
+main.js
+
+# Dependency directories
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Obsidian files
+.obsidian/
+
+# Temporary files
+*.log
+*.tmp
+.eslintcache 
