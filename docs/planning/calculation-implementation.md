@@ -46,6 +46,7 @@ This document outlines the plan for incrementally implementing the numerological
 2. Clarify how the birth number maps to Thoth deck cards
 3. Implement the yearly card progression formula
 4. Build out the remaining calculations in priority order
+5. Review and update package.json keywords to optimize plugin discoverability in Community Plugins
 
 ## Questions for Discussion
 

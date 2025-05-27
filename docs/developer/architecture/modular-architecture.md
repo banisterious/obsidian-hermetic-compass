@@ -30,8 +30,11 @@ src/
 │   ├── views/               # Views for different features
 │   └── settings/            # Settings tab UI
 │       └── SettingsTab.ts   # Settings panel implementation
-└── utils/                   # Utility functions
-    └── fileUtils.ts         # File system operations
+├── utils/                   # Utility functions
+│   └── fileUtils.ts         # File system operations
+└── assets/                  # Static assets
+    ├── fonts/               # Custom icon fonts
+    └── images/              # Card images and other visual assets
 ```
 
 ## Module Responsibilities
@@ -67,6 +70,19 @@ src/
 - Helper functions
 - File operations
 - Common utilities
+
+### assets/
+
+- Icon fonts for UI representation of cards
+- Detailed card images for rich displays
+- Static resources needed by the plugin
+
+## Feature-Specific Plans
+
+The plugin includes several key features with dedicated implementation plans:
+
+1. [Calculation Implementation](../../planning/calculation-implementation.md) - Numerology and card calculation formulas
+2. [Card Imagery Implementation](../../planning/features/card-imagery-implementation.md) - Hybrid approach with icon fonts and image sets
 
 ## Benefits of Modular Approach
 
