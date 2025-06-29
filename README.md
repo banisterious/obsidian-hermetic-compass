@@ -57,7 +57,9 @@ Configure the plugin in Obsidian Settings:
 
 ## Support My Work
 
-If you find this plugin useful, please consider supporting its development!
+If you find this plugin useful, please consider supporting its development via [https://github.com/sponsors/banisterious](https://github.com/sponsors/banisterious)
+
+Or:
 
 <a href="https://www.buymeacoffee.com/banisterious" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
