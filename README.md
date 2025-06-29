@@ -33,26 +33,9 @@ Obsidian Hermetic Compass is an advanced Obsidian plugin for personal Tarot refl
 
 After installation:
 
-1. Open the Command Palette (`Ctrl/Cmd + P`)
-2. Search for "Hermetic Compass" commands:
-   - "Generate Tarot Profile": Creates a comprehensive personal Tarot profile
-   - "View Growth Chart": Displays your yearly Tarot cards
-   - "Open Card Description": Access detailed card meanings
-
-## Configuration
-
-Configure the plugin in Obsidian Settings:
-
-1. Go to Settings → Plugin Options → Hermetic Compass
-2. Enter your personal information:
-   - Full Name
-   - Date of Birth
-   - Time of Birth (optional)
-3. Configure paths for:
-   - Tarot card images
-   - Card description notes
-   - Custom icons (optional)
-
+1. Open the Compass Control Center via the ribbon button or Command Palette (`Ctrl/Cmd + P`).
+2. Complete the form fields in Settings
+3. Click on the other tabs to view your Growth Chart, Tarot Profile, or card descriptions.
 ---
 
 ## Support My Work
