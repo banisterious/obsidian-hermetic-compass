@@ -53,6 +53,16 @@ Configure the plugin in Obsidian Settings:
    - Card description notes
    - Custom icons (optional)
 
+---
+
+## Support My Work
+
+If you find this plugin useful, please consider supporting its development!
+
+<a href="https://www.buymeacoffee.com/banisterious" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
+---
+
 ## Development
 
 Obsidian Hermetic Compass is open-source and welcomes contributions. See [CONTRIBUTING.md](CONTRIBUTING.md) for development guidelines.
