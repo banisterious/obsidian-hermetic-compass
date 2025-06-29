@@ -11,11 +11,11 @@ This document outlines security procedures and policies for the Obsidian Hermeti
 
 ## Reporting a Vulnerability
 
-The Obsidian Hermetic Compass team takes all security vulnerabilities seriously. We appreciate your efforts to responsibly disclose your findings.
+I take all security vulnerabilities seriously. I appreciate your efforts to responsibly disclose your findings.
 
 **Please DO NOT report security vulnerabilities through public GitHub issues.**
 
-Instead, please report them via email to [security@example.com](mailto:security@example.com) (replace with actual security contact).
+Instead, please report them via email to [banisterious@gmail.com](mailto:banisterious@gmail.com).
 
 Please include the following information:
 
@@ -25,11 +25,11 @@ Please include the following information:
 - Any possible mitigations
 - Your name/handle if you wish to be credited
 
-We will acknowledge receipt of your report within 48 hours.
+I will acknowledge receipt of your report within 48 hours.
 
 ## Disclosure Policy
 
-When we receive a security bug report, we will:
+When I receive a security bug report, I will:
 
 1. Confirm the problem and determine the affected versions
 2. Audit code to find any similar problems
@@ -37,14 +37,14 @@ When we receive a security bug report, we will:
 4. Release new versions of the plugin
 5. Announce the vulnerability in the changelog
 
-We ask that you:
-- Allow us time to address the vulnerability before any public disclosure
-- Keep the details of the vulnerability confidential until we publish a fix
+I ask that you:
+- Allow me time to address the vulnerability before any public disclosure
+- Keep the details of the vulnerability confidential until I publish a fix
 - Avoid exploiting the vulnerability or revealing the problem to others
 
 ## Security Update Policy
 
-Security updates will be released as soon as possible in the form of a patch version update. We will not wait for a regular release cycle to fix critical security issues.
+Security updates will be released as soon as possible in the form of a patch version update. I will not wait for a regular release cycle to fix critical security issues.
 
 Users will be notified of security updates through:
 - GitHub release notes
